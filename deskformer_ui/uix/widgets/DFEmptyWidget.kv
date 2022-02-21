@@ -1,0 +1,20 @@
+#:kivy 2.0
+
+<DFEmptyWidget>:
+
+    FloatLayout:
+        id: split_button
+        size_hint: 1, 1
+        pos_hint: {'x': 0, 'y': 0}
+
+        Button:
+            text: 'Split'
+            pos_hint: {'x': 0.05, 'center_y': 0.5}
+            size_hint: 0.4, 0.4
+            on_press: root.split_widget(2, 2)
+        
+        Button:
+            text: 'Replace'
+            pos_hint: {'x': 0.55, 'center_y': 0.5}
+            size_hint: 0.4, 0.4
+            on_press: root.replace_widget()
