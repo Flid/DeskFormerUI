@@ -36,7 +36,6 @@ class DeskFormerApp(App):
 
         self.main_screen = MainScreen(name="main")
         self.sm.add_widget(self.main_screen)
-        log.error(list(self.sm.walk()))
 
         return self.sm
 
