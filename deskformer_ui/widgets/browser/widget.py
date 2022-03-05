@@ -17,9 +17,10 @@ from kivy.graphics.texture import Texture
 from kivy.uix.boxlayout import BoxLayout
 from kivy.base import EventLoop
 from kivy.logger import Logger as log
+from deskformer_ui.widgets import DFWidgetBase
 
 
-class DFBrowserWidget(RelativeLayout):
+class DFBrowserWidget(DFWidgetBase):
     """Represent a browser widget for kivy, which can be used
     like a normal widget."""
 

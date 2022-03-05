@@ -1,0 +1,75 @@
+#:kivy 2.0
+
+<WidgetGridLayout>:
+    id: widget_grid_layout 
+
+    widget_selector: widget_selector
+
+    size_hint: None, None
+    size: root.size
+
+    BoxLayout:
+        size: widget_grid_layout.cell_width * 2, widget_grid_layout.cell_height
+        size_hint: None, None
+        pos: widget_grid_layout.width - self.width, widget_grid_layout.height - self.height
+        
+        Button:
+            text: 'L'
+            on_press: widget_grid_layout.change_lock_state()
+        
+        Button:
+            text: '+'
+            on_press: widget_grid_layout.widget_selector.show_widget()
+
+
+    WidgetSelector:
+        id: widget_selector
+        widget_list: widget_list
+        scroller: scroller
+
+        pos_hint: {'x': 0.1, 'y': 0.1}
+        size_hint: 0.8, 0.5
+
+        ScrollView:
+            id: scroller
+            pos_hint: {'x': 0.05, 'y': 0.2}
+            size_hint: 0.9, 0.75
+            do_scroll_x: False
+            do_scroll_x: False
+            do_scroll_y: True
+
+            StackLayout:
+                size_hint_y: None
+                id: widget_list
+                height: self.minimum_height
+                cols: 5
+                row: 2
+                
+
+        Button:
+            text: 'Add'
+            pos_hint: {'x': 0.2, 'y': 0.05}
+            size_hint: 0.25, 0.1
+
+        Button:
+            text: 'Cancel'
+
+            pos_hint: {'x': 0.55, 'y': 0.05}
+            size_hint: 0.25, 0.1
+        
+    
+<WidgetSelectorSingleItem>:
+    size_hint: None, None
+    size: self.widget_selector.scroller.width / 3, self.widget_selector.scroller.width / 3
+    Label:
+        id: label
+        pos_hint: {'x': 0, 'y': 0.8}
+        size_hint: 1, 0.2
+
+    Image:
+        id: image
+        pos_hint: {'x': 0, 'y': 0}
+        size_hint: 1, 0.8
+
+        allow_stretch: True
+        

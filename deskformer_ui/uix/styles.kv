@@ -1,0 +1,26 @@
+#:kivy 2.0
+
+<WidgetGridLayout>:
+    canvas.before:
+        BorderImage:
+            border: 40, 40, 40, 40 
+            source: 'deskformer_ui/static/UI-packs/basic/main-background.png'
+            size: self.size
+            pos: 0, 0
+
+
+<Button>:
+    background_normal: 'deskformer_ui/static/UI-packs/basic/button-normal.png'
+    border: 10, 10, 10, 10
+
+
+<WidgetSelector>:
+    canvas.before:
+        BorderImage:
+            border: 40, 40, 40, 40 
+            source: 'deskformer_ui/static/UI-packs/basic/panel-background.png'
+            size: self.size
+            pos: 0, 0
+
+
+
