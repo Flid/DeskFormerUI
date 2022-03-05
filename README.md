@@ -22,7 +22,6 @@ eval "$(pyenv init -)"
 > source ~/.pyenv/versions/deskformer_ui/bin/activate
 > pip install -r requirements.txt
 
-sudo apt install libsdl2-dev
 pip install PySDL2
 
 Running a script:
